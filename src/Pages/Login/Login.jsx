@@ -2,12 +2,13 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import { AuthContext } from "../Contexts/AuthProvider";
 
 const Login = () => {
-    const { loginUser, googleSignIn } = useContext(AuthContext);
-    const provider = new GoogleAuthProvider()
-    const navigate = useNavigate();
+  const { loginUser, googleSignIn } = useContext(AuthContext);
+  const provider = new GoogleAuthProvider();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,11 +22,16 @@ const Login = () => {
         navigate("/");
         console.log(result.user);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        swal("OPS.!!", error.message, "warning");
+        form.reset();
+      });
   };
 
-    const handleGoogleSignIn = () => {
-      googleSignIn(provider).then(result=>{}).catch(error=> console.log(error.message))
+  const handleGoogleSignIn = () => {
+    googleSignIn(provider)
+      .then((result) => {})
+      .catch((error) => console.log(error.message));
   };
 
   return (

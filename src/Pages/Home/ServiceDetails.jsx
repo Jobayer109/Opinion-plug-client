@@ -27,7 +27,7 @@ const ServiceDetails = () => {
         </div>
         <p className="text-justify">{description}</p>
         <div className="card-actions justify-end">
-          <Link to={`/review/${_id}`}>
+          <Link to={`/myReview/${_id}`}>
             <button className="border border-black px-4 mt-3 py-1.5 translate duration-300 ease-in  hover:bg-red-600 hover:text-white">
               Write a review
             </button>

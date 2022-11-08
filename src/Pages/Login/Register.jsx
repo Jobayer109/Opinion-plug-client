@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import { AuthContext } from "../Contexts/AuthProvider";
 
 const Register = () => {
   const { createUser, profile } = useContext(AuthContext);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -22,7 +22,10 @@ const Register = () => {
         form.reset();
         console.log(result.user);
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        swal("ops !!", error.message, "error");
+        form.reset();
+      });
   };
 
   return (
@@ -72,9 +75,6 @@ const Register = () => {
               placeholder="password"
               required
             />
-          </div>
-          <div>
-            <p className="text-red-600 font-semibold text-md">{error}</p>
           </div>
           <button
             type="submit"
