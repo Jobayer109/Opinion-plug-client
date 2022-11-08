@@ -24,51 +24,71 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-compact text-lg dropdown-content mt-3 p-1 shadow bg-base-100 rounded-box w-60"
           >
-            <li>
-              <Link className="  text-xl hover:bg-red-500 hover:text-white text-blue-800" to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
-                to="/services"
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
-                to="/myReview"
-              >
-                My Review
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
-                to="/addService"
-              >
-                Add Service
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
-                to="/blogs"
-              >
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
-                to="/profile"
-              >
-                Profile
-              </Link>
-            </li>
+            {user?.email ? (
+              <>
+                <li>
+                  <Link
+                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    to="/myReview"
+                  >
+                    My Review
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    to="/addService"
+                  >
+                    Add Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    to="/profile"
+                  >
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    to="/services"
+                  >
+                    Services
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    to="/blogs"
+                  >
+                    Blogs
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    to="/services"
+                  >
+                    Services
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    to="/blogs"
+                  >
+                    Blogs
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
@@ -80,7 +100,7 @@ const Header = () => {
       <div className="navbar-end">
         {user?.photoURL ? (
           <div className="avatar mr-4">
-            <div className="w-1 rounded-full">
+            <div className="w-10 rounded-full">
               <img src={user?.photoURL} alt="" />
             </div>
           </div>

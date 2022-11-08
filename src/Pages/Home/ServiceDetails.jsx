@@ -7,9 +7,9 @@ const ServiceDetails = () => {
   const { _id, name, img, price, description, rating } = service;
 
   return (
-    <div className="card card-side w-[80%] mx-auto shadow-xl mt-20 mb-36">
+    <div className="card card-side w-[80%] mx-auto shadow-xl mt-20 mb-36 py-4 hover:bg-yellow-100 translate duration-500 ease-out  border-2 border-black">
       <figure>
-        <img className="w-96 h-full" src={img} alt="Movie" />
+        <img className="w-96 h-full p-8 rounded-r-full" src={img} alt="Movie" />
       </figure>
       <div className="card-body w-3/5">
         <div className="flex items-center justify-between">
