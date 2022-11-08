@@ -79,11 +79,11 @@ const Header = () => {
           </div>
         </div>
         <Link to="/login">
-          <button className="border px-4 py-2 font-bold bg-blue-800 hover:bg-white translate duration-500 ease-in hover:text-black hover:border-black text-white rounded-sm">
+          <button className="border px-4 py-2 font-bold bg-blue-800 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm">
             Sign in
           </button>
         </Link>
-        <button className="border px-4 py-2 font-bold bg-red-600 hover:bg-white translate duration-500 ease-in hover:text-black hover:border-black text-white rounded-sm">
+        <button className="border px-4 py-2 font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm">
           Sign out
         </button>
       </div>
