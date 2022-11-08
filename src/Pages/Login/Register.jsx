@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthProvider";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
-    const [error, setError] =useState(null)
+  const { createUser, profile } = useContext(AuthContext);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,12 +14,15 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    
-      createUser(email, password).then(result => {
-         console.log(result.user);
-     }).catch(error => console.log(error.message))
-      
-      
+
+    createUser(email, password)
+      .then((result) => {
+        profile(name, photoURL);
+        navigate("/login");
+        form.reset();
+        console.log(result.user);
+      })
+      .catch((error) => setError(error.message));
   };
 
   return (
@@ -69,7 +73,9 @@ const Register = () => {
               required
             />
           </div>
-
+          <div>
+            <p className="text-red-600 font-semibold text-md">{error}</p>
+          </div>
           <button
             type="submit"
             className="w-full border px-4 py-3 rounded-md font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white"
