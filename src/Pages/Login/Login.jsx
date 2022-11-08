@@ -1,11 +1,13 @@
-import React, { useContext, useState } from "react";
+import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext } from "react";
+import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthProvider";
 
 const Login = () => {
-  const { loginUser } = useContext(AuthContext);
-    const [error, setError] = useState(null);
-    const navigate = useNavigate()
+    const { loginUser, googleSignIn } = useContext(AuthContext);
+    const provider = new GoogleAuthProvider()
+    const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,14 +16,18 @@ const Login = () => {
     const password = form.password.value;
 
     loginUser(email, password)
-        .then((result) => {
-            form.reset()
-            navigate("/")
-          console.log(result.user);
-          
+      .then((result) => {
+        form.reset();
+        navigate("/");
+        console.log(result.user);
       })
-      .catch((error) => setError(error));
+      .catch((error) => console.log(error));
   };
+
+    const handleGoogleSignIn = () => {
+      googleSignIn(provider).then(result=>{}).catch(error=> console.log(error.message))
+  };
+
   return (
     <div className="flex items-center justify-evenly w-[80%] mx-auto my-24 ">
       <div className="w-1/2">
@@ -33,9 +39,9 @@ const Login = () => {
       </div>
       <div className="p-4 w-1/2 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 transition duration-700 ease-out hover:bg-gray-200 ">
         <form onSubmit={handleSubmit} className="space-y-6" action="#">
-          <h5 className="text-3xl font-bold text-center pt-3 pb-6 text-gray-900 ">Sign in</h5>
+          <h5 className="text-3xl font-bold text-center text-gray-900 ">Sign in</h5>
           <div>
-            <label for="email" className="block mb-2 text-sm font-medium text-gray-900 ">
+            <label for="email" className="block mb-1 text-sm font-medium text-gray-900 ">
               Your email
             </label>
             <input
@@ -49,7 +55,7 @@ const Login = () => {
           <div>
             <label
               for="password"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Your password
             </label>
@@ -69,15 +75,24 @@ const Login = () => {
               Forget Password?
             </Link>
           </div>
-          <div>
-            <p className="text-red-600 font-semibold text-md ml-auto">{error}</p>
-          </div>
+
           <button
             type="submit"
             className="w-full border px-4 py-3 font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-md"
           >
             Sign in
           </button>
+          <div className="divider text-xs">OR</div>
+
+          <div className="text-center">
+            <button
+              onClick={handleGoogleSignIn}
+              className="text-xl mr-3 py-1.5 rounded-lg hover:bg-blue-500 hover:text-white flex items-center border translate duration-300 ease-in border-black w-full"
+            >
+              <FaGoogle className="ml-14 mr-3" />
+              <p>Sign in with Google</p>
+            </button>
+          </div>
           <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
             Not registered?{" "}
             <Link to="/register" className="text-blue-700 hover:underline dark:text-blue-500">
