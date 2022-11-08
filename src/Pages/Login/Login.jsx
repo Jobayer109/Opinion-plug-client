@@ -1,13 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Contexts/AuthProvider";
 
 const Login = () => {
+  const { loginUser } = useContext(AuthContext);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+
+    loginUser(email, password)
+        .then((result) => {
+            form.reset()
+            navigate("/")
+          console.log(result.user);
+          
+      })
+      .catch((error) => setError(error));
   };
   return (
     <div className="flex items-center justify-evenly w-[80%] mx-auto my-24 ">
@@ -48,13 +61,16 @@ const Login = () => {
               required
             />
           </div>
-          <div className="">
+          <div>
             <Link
               to="/"
               className="ml-auto text-sm font-bold text-blue-700 hover:underline dark:text-blue-500"
             >
               Forget Password?
             </Link>
+          </div>
+          <div>
+            <p className="text-red-600 font-semibold text-md ml-auto">{error}</p>
           </div>
           <button
             type="submit"

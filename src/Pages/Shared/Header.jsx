@@ -1,9 +1,18 @@
-import React from "react";
-import { FaBars } from "react-icons/fa";
+import React, { useContext } from "react";
+import { FaBars, FaUserSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logo.png";
+import { AuthContext } from "../Contexts/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {})
+      .then((error) => {});
+  };
+
   return (
     <div className="navbar lg:px-24">
       <div className="navbar-start">
@@ -13,19 +22,16 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact font-mono text-xl dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60"
+            className="menu menu-compact text-lg dropdown-content mt-3 p-1 shadow bg-base-100 rounded-box w-60"
           >
             <li>
-              <Link
-                className=" hover:border hover:border-red-600 text-xl hover:bg-white text-blue-800"
-                to="/"
-              >
+              <Link className="  text-xl hover:bg-red-500 hover:text-white text-blue-800" to="/">
                 Home
               </Link>
             </li>
             <li>
               <Link
-                className=" hover:border hover:border-red-600 text-xl hover:bg-white text-blue-800"
+                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
                 to="/services"
               >
                 Services
@@ -33,7 +39,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className=" hover:border hover:border-red-600 text-xl hover:bg-white text-blue-800"
+                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
                 to="/myReview"
               >
                 My Review
@@ -41,7 +47,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className=" hover:border hover:border-red-600 text-xl hover:bg-white text-blue-800"
+                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
                 to="/addService"
               >
                 Add Service
@@ -49,7 +55,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className=" hover:border hover:border-red-600 text-xl hover:bg-white text-blue-800"
+                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
                 to="/blogs"
               >
                 Blogs
@@ -57,7 +63,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className=" hover:border hover:border-red-600 text-xl hover:bg-white text-blue-800"
+                className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
                 to="/profile"
               >
                 Profile
@@ -67,25 +73,35 @@ const Header = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <Link to='/'>
-         
+        <Link to="/">
           <img className="h-6" src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-end">
-        <div className="avatar mr-4">
-          <div className="w-12 rounded-full">
-            <img src="https://placeimg.com/192/192/people" alt="" />
+        {user?.photoURL ? (
+          <div className="avatar mr-4">
+            <div className="w-1 rounded-full">
+              <img src={user?.photoURL} alt="" />
+            </div>
           </div>
-        </div>
-        <Link to="/login">
-          <button className="border px-4 py-2 font-bold bg-blue-800 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm">
-            Sign in
+        ) : (
+          <FaUserSlash className="w-24 text-red-500" />
+        )}
+
+        {user?.email ? (
+          <button
+            onClick={handleSignOut}
+            className="border px-4 py-2 font-medium bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm"
+          >
+            Sign out
           </button>
-        </Link>
-        <button className="border px-4 py-2 font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm">
-          Sign out
-        </button>
+        ) : (
+          <Link to="/login">
+            <button className="border px-4 py-2 font-medium bg-blue-800 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm">
+              Sign in
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
