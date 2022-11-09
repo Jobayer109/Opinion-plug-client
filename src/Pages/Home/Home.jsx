@@ -1,11 +1,11 @@
 import React from "react";
 import Banner from "./Banner";
-import Services from "./Services";
+import HomeServices from "./HomeServices";
 
 const Home = () => {
     return <div className="w-[90%] mx-auto">
         <Banner></Banner>
-        <Services></Services>
+       <HomeServices></HomeServices>
   </div>;
 };
 

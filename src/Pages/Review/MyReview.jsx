@@ -26,7 +26,7 @@ const MyReview = () => {
           const remaining = reviews.filter((rvw) => rvw._id !== _id);
           setReviews(remaining);
         } else {
-          swal("ops", "No review", "warning")
+          swal("ops", "No review", "warning");
         }
       });
   };

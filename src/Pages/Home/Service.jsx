@@ -1,14 +1,18 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
   const { _id, name, img, price, description, rating } = service;
   return (
     <div className="card card-compact w-80 shadow-xl hover:translate duration-500 ease-in hover:bg-red-200">
-      <figure>
-        <img className="h-44 w-[95%] mx-auto rounded-lg mt-2 " src={img} alt="" />
-      </figure>
+      <PhotoProvider>
+        <PhotoView src={img}>
+        </PhotoView>
+      </PhotoProvider>
+          <img className="h-44 w-[95%] mx-auto rounded-lg mt-2 " src={img} alt="" />
+
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <div className="flex items-center justify-between">

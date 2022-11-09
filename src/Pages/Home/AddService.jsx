@@ -40,7 +40,7 @@ const AddService = () => {
     <section className="p-6 bg-yellow-300  h-screen pt-20 ">
       <form
         onSubmit={handleAddService}
-        className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid w-[80%] mx-auto"
+        className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid w-[80%]"
       >
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
           <div className="space-y-2 col-span-full lg:col-span-1">
