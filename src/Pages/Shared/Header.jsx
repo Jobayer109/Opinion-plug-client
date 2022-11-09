@@ -29,7 +29,7 @@ const Header = () => {
               <>
                 <li>
                   <Link
-                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/submitReview"
                   >
                     My Review
@@ -37,7 +37,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/addService"
                   >
                     Add Service
@@ -45,7 +45,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/profile"
                   >
                     Profile
@@ -53,7 +53,7 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/services"
                   >
                     Services
@@ -62,7 +62,7 @@ const Header = () => {
 
                 <li>
                   <Link
-                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/blogs"
                   >
                     Blogs
@@ -73,7 +73,7 @@ const Header = () => {
               <>
                 <li>
                   <Link
-                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/services"
                   >
                     Services
@@ -82,7 +82,7 @@ const Header = () => {
 
                 <li>
                   <Link
-                    className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
+                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/blogs"
                   >
                     Blogs

@@ -7,7 +7,7 @@ const AddService = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.serviceName.value;
-    const img = form.filename.value;
+    const img = form.img.value;
     const description = form.description.value;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -37,14 +37,14 @@ const AddService = () => {
   };
 
   return (
-    <section className="p-6 bg-yellow-300  h-screen pt-20 ">
+    <section className="p-6 bg-blue-100  h-screen pt-20 ">
       <form
         onSubmit={handleAddService}
         className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid w-[80%]"
       >
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
           <div className="space-y-2 col-span-full lg:col-span-1">
-            <p className="font-medium text-2xl text-center font-mono mb-2">Add Service</p>
+            <p className="font-medium text-2xl text-center font-mono mb-2 border  py-2 mt-5 bg-blue-200 text-blue-800 rounded-l-full shadow-xl">Add Service</p>
             <img className="h-72" src={banner} alt="" />
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -55,24 +55,25 @@ const AddService = () => {
               <input
                 name="serviceName"
                 type="text"
-                placeholder="Service name"
+                placeholder="service name"
+                className="w-full rounded-md p-3"
+                required
+              />
+            </div>
+            <div className="col-span-full sm:col-span-3">
+              <label for="" className="text-sm">
+                Photo url
+              </label>
+              <input
+                name="img"
+                type="text"
+                placeholder="enter photo url"
                 className="w-full rounded-md p-3"
                 required
               />
             </div>
 
-            <div className="col-span-full sm:col-span-3">
-              <label for="photoURL" className="text-sm ml-3">
-                Photo upload
-              </label>
-              <input
-                type="file"
-                name="filename"
-                accept="image/*"
-                className="w-full rounded-md p-3"
-                required
-              />
-            </div>
+            
 
             <div className="col-span-full">
               <label for="" className="text-sm">
@@ -81,7 +82,7 @@ const AddService = () => {
               <input
                 type="text"
                 name="description"
-                placeholder="Description"
+                placeholder="description"
                 className="w-full rounded-md p-3"
                 required
               />
@@ -106,7 +107,7 @@ const AddService = () => {
               <input
                 type="text"
                 name="rating"
-                placeholder="Ex: 4.3"
+                placeholder="ex: 4.3"
                 className="w-full rounded-md p-3"
                 data-temp-mail-org="0"
                 required
@@ -115,7 +116,7 @@ const AddService = () => {
             <div className=" text-center mr-3">
               <input
                 type="submit"
-                className="border border-black px-4 mt-3 py-1.5 translate duration-300 ease-in bg-red-600 hover:bg-white hover:text-black font-semibold text-white rounded-sm"
+                className="border border-black px-4 mt-3 py-1.5 translate duration-300 ease-in bg-red-600 hover:bg-white hover:text-black font-semibold text-white rounded-sm shadow-lg"
                 value="Submit Review"
               />
             </div>

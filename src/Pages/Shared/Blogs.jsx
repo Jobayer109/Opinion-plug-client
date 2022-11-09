@@ -3,8 +3,8 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 const Blogs = () => {
     return (
-      <div className="w-[80%] mx-auto pt-20">
-        <div className="flex space-x-2 sm:space-x-4 border rounded-lg shadow-lg p-8 bg-gray-200 mb-12">
+      <div className="  p-52 pt-20 bg-black">
+        <div className="flex space-x-2 sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
             <p className="text-2xl font-mono text-blue-700">
@@ -18,7 +18,7 @@ const Blogs = () => {
             </p>
           </div>
         </div>
-        <div className="flex space-x-2 sm:space-x-4 border rounded-lg shadow-lg p-8 bg-gray-200 mb-12">
+        <div className="flex space-x-2 sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
             <p className="text-2xl font-mono text-blue-700">What is JWT, and how does it work? </p>
@@ -33,7 +33,7 @@ const Blogs = () => {
             </p>
           </div>
         </div>
-        <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-gray-200 mb-12">
+        <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
             <p className="text-2xl font-mono text-blue-700">What is JWT, and how does it work? </p>
@@ -48,7 +48,7 @@ const Blogs = () => {
             </p>
           </div>
         </div>
-        <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-gray-200 mb-12">
+        <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
             <p className="text-2xl font-mono text-blue-700">
@@ -61,7 +61,7 @@ const Blogs = () => {
             </p>
           </div>
         </div>
-        <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-gray-200 mb-20">
+        <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-20">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
             <p className="text-2xl font-mono text-blue-700">

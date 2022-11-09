@@ -10,7 +10,7 @@ const ServiceDetails = () => {
   return (
     <div>
       {" "}
-      <div className="card card-side w-[80%] mx-auto shadow-xl mt-20 mb-20 py-4 hover:bg-yellow-100 translate duration-500 ease-out  border-2 border-black">
+      <div className="card card-side w-[80%] mx-auto shadow-xl mt-20 mb-20 py-4 hover:bg-blue-100 translate duration-500 ease-out  border-2 border-black">
         <figure>
           <img
             className="w-96 h-full p-8 rounded-r-full hover:translate-x-2 duration-500 ease-out"

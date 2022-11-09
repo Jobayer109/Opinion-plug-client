@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 const Service = ({ service }) => {
   const { _id, name, img, price, description, rating } = service;
   return (
-    <div className="card card-compact w-72 shadow-xl hover:translate duration-500 ease-in hover:bg-red-200">
+    <div className="card card-compact w-72 shadow-xl hover:translate duration-500 ease-in hover:bg-blue-100">
       <PhotoProvider>
-        <PhotoView src={img}>
+        <PhotoView>
+          <img className="h-44 w-[95%] mx-auto rounded-lg mt-2 " src={img} alt="" />
         </PhotoView>
       </PhotoProvider>
-          <img className="h-44 w-[95%] mx-auto rounded-lg mt-2 " src={img} alt="" />
 
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
