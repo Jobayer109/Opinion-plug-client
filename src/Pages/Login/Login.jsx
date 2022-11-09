@@ -24,14 +24,15 @@ const Login = () => {
       })
       .catch((error) => {
         swal("OPS.!!", error.message, "warning");
-        form.reset();
       });
   };
 
   const handleGoogleSignIn = () => {
     googleSignIn(provider)
       .then((result) => {})
-      .catch((error) => console.log(error.message));
+        .catch((error) => {
+          swal("OPS.!!", error.message, "warning");
+      });
   };
 
   return (

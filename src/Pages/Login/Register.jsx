@@ -24,7 +24,6 @@ const Register = () => {
       })
       .catch((error) => {
         swal("ops !!", error.message, "error");
-        form.reset();
       });
   };
 

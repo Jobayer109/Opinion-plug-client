@@ -5,7 +5,8 @@ import logo from "../../assets/Logo.png";
 import { AuthContext } from "../Contexts/AuthProvider";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    
 
   const handleSignOut = () => {
     logOut()
@@ -29,7 +30,7 @@ const Header = () => {
                 <li>
                   <Link
                     className="  text-xl hover:bg-red-500 hover:text-white text-blue-800"
-                    to="/myReview"
+                    to="/submitReview"
                   >
                     My Review
                   </Link>

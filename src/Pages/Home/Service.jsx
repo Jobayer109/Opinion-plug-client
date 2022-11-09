@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Service = ({ service }) => {
   const { _id, name, img, price, description, rating } = service;
   return (
-    <div className="card card-compact w-80 shadow-xl translate duration-500 ease-in hover:bg-gray-200">
+    <div className="card card-compact w-80 shadow-xl hover:translate duration-500 ease-in hover:bg-red-200">
       <figure>
-        <img className="h-44 w-full" src={img} alt="" />
+        <img className="h-44 w-[95%] mx-auto rounded-lg mt-2 " src={img} alt="" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
@@ -16,7 +16,7 @@ const Service = ({ service }) => {
             Price: $ <span className="text-red-600 font-bold">{price}</span>
           </p>
           <div className="flex items-center">
-            <FaStar className="mr-2 "></FaStar>
+            <FaStar className="mr-2 text-yellow-500 "></FaStar>
             <p className="text-red-600 font-bold"> {rating}</p>
           </div>
         </div>
@@ -24,8 +24,8 @@ const Service = ({ service }) => {
           {description.length > 100 ? description.slice(0, 100) + "... read more" : description}
         </p>
         <div className="card-actions justify-end">
-          <Link to={`/services/${_id}`}>
-            <button className="border border-black px-4 mt-3 py-1.5 translate duration-500 ease-in  hover:bg-red-600 hover:text-white">
+          <Link to={`/service/${_id}`}>
+            <button className="border border-black px-4 mt-3 mb-3 rounded-sm py-1.5 translate duration-500 ease-in  hover:bg-red-600 hover:text-white">
               View details
             </button>
           </Link>

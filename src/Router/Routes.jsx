@@ -6,6 +6,7 @@ import Services from "../Pages/Home/Services";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register";
 import MyReview from "../Pages/Review/MyReview";
+import SubmitReview from "../Pages/Review/SubmitReview";
 import ErrorPage from "../Pages/Shared/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
         element: <Services></Services>,
       },
       {
-        path: "services/:id",
+        path: "service/:id",
         loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
         element: <ServiceDetails></ServiceDetails>,
       },
@@ -36,9 +37,14 @@ export const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "myReview/:id",
+        path: "review/:id",
         loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+        element: <SubmitReview></SubmitReview>,
+      },
+      {
+        path: "myReview/:serviceId",
         element: <MyReview></MyReview>,
+        loader: (params) => fetch(`http://localhost:5000/reviews?serviceId=${params.serviceId}`),
       },
     ],
   },
