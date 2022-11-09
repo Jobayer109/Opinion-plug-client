@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 import Reviews from "./Reviews";
 
 const MyReview = () => {
@@ -15,11 +16,18 @@ const MyReview = () => {
   }, [serviceReviews._id]);
 
   const handleDeleteReview = (_id) => {
-    fetch(`http://localhost:5000/${serviceReviews._id}`, {
+    fetch(`http://localhost:5000/reviews/${_id}`, {
       method: "DELETE",
-    }).then(res => res.json()).then(data => {
-        console.log(data);
     })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount) {
+          swal("Ok", "Your review is deleted successfully", "success");
+          const remaining = reviews.filter((rvw) => rvw._id !== _id);
+          setReviews(remaining);
+        }
+        console.log(data);
+      });
   };
 
   return (
