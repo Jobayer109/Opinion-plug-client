@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../Contexts/AuthProvider";
-import ReviewDate from "./ReviewDate";
 
 const SubmitReview = () => {
   const service = useLoaderData();
@@ -14,9 +13,10 @@ const SubmitReview = () => {
     const form = e.target;
     const email = user?.email || form.email.value;
     const userImg = form.photoURL.value || user?.photoURL;
-    const country = form.country.value;
+
     const userName = user?.displayName || form.userName.value;
     const comment = form.comment.value;
+    const date = form.date.value;
 
     const review = {
       serviceId: _id,
@@ -24,8 +24,8 @@ const SubmitReview = () => {
       email,
       rating,
       price,
-      country,
       userName,
+      date,
       img,
       comment,
       userImg,
@@ -86,13 +86,6 @@ const SubmitReview = () => {
               required
             />
             <input
-              type="text"
-              name="country"
-              className="border rounded-lg p-3"
-              placeholder="country"
-              required
-            />
-            <input
               type="email"
               name="email"
               className="border rounded-lg p-3"
@@ -101,6 +94,7 @@ const SubmitReview = () => {
               readOnly
               required
             />
+            <input type="date" name="date" id="" className="border rounded-lg p-3" required />
             <input
               type="text"
               name="photoURL"
@@ -111,9 +105,6 @@ const SubmitReview = () => {
               required
               hidden
             />
-            <div>
-              <ReviewDate></ReviewDate>
-            </div>
           </div>
           <div className="my-8">
             <textarea
