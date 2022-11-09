@@ -21,12 +21,13 @@ const MyReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount) {
+        if (data.deletedCount > 0) {
           swal("Ok", "Your review is deleted successfully", "success");
           const remaining = reviews.filter((rvw) => rvw._id !== _id);
           setReviews(remaining);
+        } else {
+          swal("ops", "No review", "warning")
         }
-        console.log(data);
       });
   };
 
