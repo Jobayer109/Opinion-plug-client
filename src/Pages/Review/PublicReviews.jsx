@@ -30,13 +30,6 @@ const PublicReviews = () => {
             </button>
           </Link>
         </div>
-        <div className="card-actions justify-center">
-          <Link to={`/myReviews`}>
-            <button className="border border-black px-4 mb-24 w-44 py-1.5 hover:translate duration-300 ease-in  hover:bg-white bg-green-600 hover:text-black text-white ml-4">
-              My review
-            </button>
-          </Link>
-        </div>
       </div>
     </div>
   );

@@ -49,7 +49,24 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     googleSignIn(provider)
-      .then((result) => {})
+      .then((result) => {
+        const currentUser = {
+          email: result.user?.email,
+        };
+
+        fetch(`https://opinion-plug-server.vercel.app/jwt`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("jwt-token", data.token);
+          });
+      })
       .catch((error) => {
         swal("OPS.!!", error.message, "warning");
       });

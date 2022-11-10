@@ -21,15 +21,16 @@ const Services = () => {
     <div>
       {" "}
       <div>
-        <Spinner></Spinner>
         <h2 className="text-center text-3xl font-bold mb-12 mt-20 w-[70%] mx-auto  text-red-600 border-b-2 pb-3">
           Services
         </h2>
       </div>
       <div className="grid grid-cols-3 gap-10 w-[80%] mx-auto mb-20">
-        {services?.map((service) => (
-          <Service key={service._id} service={service}></Service>
-        ))}
+        {services.length === 0 ? (
+          <Spinner />
+        ) : (
+          services?.map((service) => <Service key={service._id} service={service}></Service>)
+        )}
       </div>
       <div className="text-center mb-36">
         <p className="mt-2 text-sm font-mono">Currently selected page:{page + 1}</p>

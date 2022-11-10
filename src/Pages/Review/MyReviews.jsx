@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import swal from "sweetalert";
 import { AuthContext } from "../Contexts/AuthProvider";
+import Spinner from "../Shared/Spinner";
 import MyReview from "./MyReview";
 
 const MyReviews = () => {
@@ -58,13 +59,17 @@ const MyReviews = () => {
     <div>
       <p className="text-center my-24 ">{myReviews.length ? "" : "No reviews were added"}</p>
       <div className="grid grid-cols-3 gap-8 w-[70%] mx-auto my-20">
-        {myReviews?.map((myReview) => (
-          <MyReview
-            key={myReview._id}
-            myReview={myReview}
-            handleDeleteReview={handleDeleteReview}
-          ></MyReview>
-        ))}
+        {myReviews.length === 0 ? (
+          <Spinner className="w-full" />
+        ) : (
+          myReviews?.map((myReview) => (
+            <MyReview
+              key={myReview._id}
+              myReview={myReview}
+              handleDeleteReview={handleDeleteReview}
+            ></MyReview>
+          ))
+        )}
       </div>
       <div>
         <input type="checkbox" id="my-modal" className="modal-toggle" />
