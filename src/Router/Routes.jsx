@@ -7,7 +7,8 @@ import ServiceDetails from "../Pages/Home/ServiceDetails";
 import Services from "../Pages/Home/Services";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register";
-import MyReview from "../Pages/Review/MyReview";
+import MyReviews from "../Pages/Review/MyReviews";
+import PublicReviews from "../Pages/Review/PublicReviews";
 import SubmitReview from "../Pages/Review/SubmitReview";
 import Blogs from "../Pages/Shared/Blogs";
 import ErrorPage from "../Pages/Shared/ErrorPage";
@@ -54,13 +55,17 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "myReview/:serviceId",
+        path: "publicREview/:serviceId",
+        element: <PublicReviews></PublicReviews>,
+        loader: (params) => fetch(`http://localhost:5000/reviews?serviceId=${params.serviceId}`),
+      },
+      {
+        path: "myReviews",
         element: (
           <PrivetRoutes>
-            <MyReview></MyReview>
+            <MyReviews></MyReviews>
           </PrivetRoutes>
         ),
-        loader: (params) => fetch(`http://localhost:5000/reviews?serviceId=${params.serviceId}`),
       },
       {
         path: "addService",

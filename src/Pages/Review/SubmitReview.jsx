@@ -13,7 +13,7 @@ const SubmitReview = () => {
     e.preventDefault();
     const form = e.target;
     const email = user?.email || form.email.value;
-    const userImg = user?.photoURL || form.photoURL.value;
+    const userImg = user?.photoURL || form.photo.value;
     const userName = user?.displayName || form.userName.value;
     const comment = form.comment.value;
     const date = form.date.value;
@@ -97,7 +97,7 @@ const SubmitReview = () => {
             <input type="date" name="date" id="" className="border rounded-lg p-3" required />
             <input
               type="text"
-              name="photoURL"
+              name="photo"
               className="border rounded-lg p-3"
               placeholder="your photo"
             />

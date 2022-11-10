@@ -28,9 +28,9 @@ const Header = () => {
             {user?.email ? (
               <>
                 <li>
-                  <Link
+                  <Link 
                     className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
-                    to="/submitReview"
+                    to="/myReviews"
                   >
                     My Review
                   </Link>

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
-import MyReview from "../Review/MyReview";
+import PublicReviews from "../Review/PublicReviews";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
@@ -36,7 +36,7 @@ const ServiceDetails = () => {
           
         </div>
       </div>
-      <MyReview></MyReview>
+<PublicReviews></PublicReviews>
     </div>
   );
 };

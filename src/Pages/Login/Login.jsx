@@ -1,5 +1,5 @@
 import { GoogleAuthProvider } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
@@ -7,7 +7,7 @@ import { AuthContext } from "../Contexts/AuthProvider";
 import Spinner from "../Shared/Spinner";
 
 const Login = () => {
-  const { loginUser, googleSignIn } = useContext(AuthContext);
+  const { user, loginUser, googleSignIn } = useContext(AuthContext);
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,7 +22,6 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         form.reset();
-        navigate(from, {replace: true});
         console.log(result.user);
       })
       .catch((error) => {
@@ -38,10 +37,16 @@ const Login = () => {
       });
   };
 
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, user]);
+
   return (
     <div>
       {" "}
-        <Spinner></Spinner>
+      <Spinner></Spinner>
       <div className="flex items-center justify-evenly w-[80%] mx-auto my-24 ">
         <div className="w-1/2">
           <img

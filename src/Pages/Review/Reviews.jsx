@@ -1,19 +1,18 @@
-import React, { useContext } from "react";
-import { FaCalendarAlt, FaEdit, FaTrash } from "react-icons/fa";
-import { AuthContext } from "../Contexts/AuthProvider";
+import React from "react";
+import { FaCalendarAlt } from "react-icons/fa";
 
-const Reviews = ({ review, handleDeleteReview }) => {
-  const { user } = useContext(AuthContext);
-  const { comment, userName, _id, date } = review;
+
+const Reviews = ({ review }) => {
+  const { comment, userName, date, userImg} = review;
   console.log(review);
 
   return (
     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-600 border bg-blue-100">
-      <div className="flex justify-between p-4">
-        <div className="flex space-x-4">
+      <div className="flex justify-between p-2">
+        <div className="flex space-x-2">
           <div>
             <img
-              src={user?.photoURL}
+              src={userImg}
               alt=""
               className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
             />
@@ -26,12 +25,7 @@ const Reviews = ({ review, handleDeleteReview }) => {
             </div>
           </div>
         </div>
-        <div>
-          <FaTrash onClick={() => handleDeleteReview(_id)} className="text-xl mb-3 text-red-700" />
-          <label htmlFor="my-modal">
-            <FaEdit className="text-xl" />
-          </label>
-        </div>
+        
       </div>
       <div className="p-4 space-y-2 text-sm dark:text-gray-400">
         <p>{comment}</p>
