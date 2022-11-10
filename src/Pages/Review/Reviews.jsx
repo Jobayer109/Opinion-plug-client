@@ -4,7 +4,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 const Reviews = ({ review }) => {
   const { comment, userName, date, userImg} = review;
-  console.log(review);
+  
 
   return (
     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-600 border bg-blue-100">

@@ -26,7 +26,7 @@ const Banner = () => {
             type="submit"
             className="w-44 border px-4 py-3 font-medium bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm"
           >
-           Join with us
+           Join with me
           </button>
         </Link>
       </div>

@@ -4,9 +4,7 @@ import Reviews from "./Reviews";
 
 const PublicReviews = () => {
   const serviceReviews = useLoaderData();
-  console.log(serviceReviews);
   const [reviews, setReviews] = useState([]);
-  console.log(reviews);
 
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?serviceId=${serviceReviews._id}`)
@@ -16,16 +14,12 @@ const PublicReviews = () => {
       });
   }, [serviceReviews._id]);
 
-  
   return (
     <div>
       <p className="text-center">{reviews.length ? "" : "No reviews were added"}</p>
       <div className="grid grid-cols-3 w-[80%] mx-auto gap-10 mb-24">
         {reviews?.map((review) => (
-          <Reviews
-            key={review._id}
-            review={review}
-          ></Reviews>
+          <Reviews key={review._id} review={review}></Reviews>
         ))}
       </div>
       <div className="flex items-center justify-center">

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FaBars, FaUserSlash } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logo.png";
 import { AuthContext } from "../Contexts/AuthProvider";
@@ -10,7 +10,9 @@ const Header = () => {
 
   const handleSignOut = () => {
     logOut()
-      .then((result) => {})
+      .then((result) => {
+        localStorage.clear()
+      })
       .then((error) => {});
   };
 
@@ -99,15 +101,13 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-end">
-        {user?.photoURL ? (
+        {user?.photoURL &&
           <div className="avatar mr-4">
             <div className="w-10 rounded-full">
               <img src={user?.photoURL} alt="" />
             </div>
           </div>
-        ) : (
-          <FaUserSlash className="w-24 text-red-500" />
-        )}
+        }
 
         {user?.email ? (
           <Link to='/login'>

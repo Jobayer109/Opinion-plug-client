@@ -5,7 +5,7 @@ import { AuthContext } from "../Contexts/AuthProvider";
 import Spinner from "../Shared/Spinner";
 
 const Register = () => {
-  const { createUser, profile } = useContext(AuthContext);
+  const { createUser, profile, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,8 +18,9 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        profile(name, photoURL);
+        logOut()
         navigate("/login");
+        profile(name, photoURL);
         form.reset();
         console.log(result.user);
       })

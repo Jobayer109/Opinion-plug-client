@@ -22,11 +22,29 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         form.reset();
-        console.log(result.user);
+
+         const currentUser = {
+           email: result.user?.email,
+         };
+
+         fetch(`http://localhost:5000/jwt`, {
+           method: "POST",
+           headers: {
+             "content-type": "application/json",
+           },
+           body: JSON.stringify(currentUser),
+         })
+           .then((res) => res.json())
+           .then((data) => {
+             console.log(data);
+             localStorage.setItem("jwt-token", data.token)
+           });
       })
       .catch((error) => {
         swal("OPS.!!", error.message, "warning");
       });
+
+   
   };
 
   const handleGoogleSignIn = () => {

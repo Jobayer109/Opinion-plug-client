@@ -2,7 +2,7 @@ import React from "react";
 import { FaCalendarAlt, FaEdit, FaTrash } from "react-icons/fa";
 
 const MyReview = ({ myReview, handleDeleteReview, handleUpdateReview }) => {
-  console.log(myReview);
+ 
   const { comment, userName, date, userImg, _id } = myReview;
   return (
     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-600 border bg-blue-100">
@@ -25,7 +25,10 @@ const MyReview = ({ myReview, handleDeleteReview, handleUpdateReview }) => {
         </div>
         <div>
           <FaTrash onClick={() => handleDeleteReview(_id)} className="text-red-600 mb-2" />
-          <FaEdit onClick={() => handleUpdateReview(_id)} className="" />
+
+          <label htmlFor="my-modal">
+            <FaEdit />
+          </label>
         </div>
       </div>
       <div className="p-4 space-y-2 text-sm dark:text-gray-400">
