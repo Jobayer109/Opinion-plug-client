@@ -4,7 +4,6 @@ import HomeService from "./HomeService";
 
 const HomeServices = () => {
   const [services, setServices] = useState([]);
-  console.log(services);
 
   useEffect(() => {
     fetch("http://localhost:5000/homeServices")

@@ -7,10 +7,10 @@ const Blogs = () => {
         <div className="flex space-x-2 sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
-            <p className="text-2xl font-mono text-blue-700">
+            <p className="text-xl font-mono text-blue-700">
               What is the difference between SQL and NoSQL ?
             </p>
-            <p className=" font-serif text-justify text-xl">
+            <p className=" text-justify text-md">
               SQL databases are vertically scalable, while NoSQL databases are horizontally
               scalable. SQL databases are table-based, while NoSQL databases are document,
               key-value, graph, or wide-column stores. SQL databases are better for multi-row
@@ -21,8 +21,8 @@ const Blogs = () => {
         <div className="flex space-x-2 sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
-            <p className="text-2xl font-mono text-blue-700">What is JWT, and how does it work? </p>
-            <p className=" font-serif text-justify text-xl">
+            <p className="text-xl font-mono text-blue-700">What is JWT, and how does it work? </p>
+            <p className=" text-justify text-md">
               JSON Web Token is a proposed Internet standard for creating data with optional
               signature and/or optional encryption whose payload holds JSON that asserts some number
               of claims. The tokens are signed either using a private secret or a public/private
@@ -36,8 +36,8 @@ const Blogs = () => {
         <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
-            <p className="text-2xl font-mono text-blue-700">What is JWT, and how does it work? </p>
-            <p className=" font-serif text-justify text-xl">
+            <p className="text-xl font-mono text-blue-700">What is JWT, and how does it work? </p>
+            <p className=" text-justify text-md">
               JSON Web Token is a proposed Internet standard for creating data with optional
               signature and/or optional encryption whose payload holds JSON that asserts some number
               of claims. The tokens are signed either using a private secret or a public/private
@@ -51,10 +51,10 @@ const Blogs = () => {
         <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-12">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
-            <p className="text-2xl font-mono text-blue-700">
+            <p className="text-xl font-mono text-blue-700">
               What is the difference between javascript and NodeJS?
             </p>
-            <p className=" font-serif text-justify text-xl">
+            <p className=" text-justify text-md">
               JavaScript is a simple programming language that can be used with any browser that has
               the JavaScript Engine installed. Node. js, on the other hand, is an interpreter or
               execution environment for the JavaScript programming language.
@@ -64,10 +64,10 @@ const Blogs = () => {
         <div className="flex space-x- sm:space-x-4 border rounded-lg shadow-lg p-8 bg-white hover:bg-blue-200 translate duration-500 ease-in mb-20">
           <FaCheckCircle className="text-4xl text-red-500" />
           <div className="space-y-2">
-            <p className="text-2xl font-mono text-blue-700">
+            <p className="text-xl font-mono text-blue-700">
               What is the difference between javascript and NodeJS?
             </p>
-            <p className=" font-serif text-justify text-xl">
+            <p className=" text-justify text-md">
               NodeJS receives multiple client requests and places them into EventQueue. NodeJS is
               built with the concept of event-driven architecture. NodeJS has its own EventLoop
               which is an infinite loop that receives requests and processes them.

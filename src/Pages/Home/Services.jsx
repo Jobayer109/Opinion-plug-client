@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Spinner from "../Shared/Spinner";
 import Service from "./Service";
 
 const Services = () => {
@@ -13,6 +14,7 @@ const Services = () => {
   }, []);
   return (
     <div>
+      <Spinner></Spinner>
       <h2 className="text-center text-3xl font-bold mb-12 mt-20  text-red-600 border-b-2 pb-3">
         Services
       </h2>

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
@@ -8,7 +9,7 @@ const Service = ({ service }) => {
   return (
     <div className="card card-compact w-72 shadow-xl hover:translate duration-500 ease-in hover:bg-blue-100">
       <PhotoProvider>
-        <PhotoView>
+        <PhotoView src={img}>
           <img className="h-44 w-[95%] mx-auto rounded-lg mt-2 " src={img} alt="" />
         </PhotoView>
       </PhotoProvider>

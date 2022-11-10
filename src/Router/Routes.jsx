@@ -28,8 +28,8 @@ export const router = createBrowserRouter([
         element: <Services></Services>,
       },
       {
-        path: 'home',
-        element: <HomeServices></HomeServices>
+        path: "home",
+        element: <HomeServices></HomeServices>,
       },
       {
         path: "service/:id",
@@ -63,13 +63,17 @@ export const router = createBrowserRouter([
         loader: (params) => fetch(`http://localhost:5000/reviews?serviceId=${params.serviceId}`),
       },
       {
-        path: 'addService',
-        element: <AddService></AddService>
+        path: "addService",
+        element: (
+          <PrivetRoutes>
+            <AddService></AddService>
+          </PrivetRoutes>
+        ),
       },
       {
-        path: 'blogs',
-        element: <Blogs>z</Blogs>
-      }
+        path: "blogs",
+        element: <Blogs></Blogs>,
+      },
     ],
   },
 ]);

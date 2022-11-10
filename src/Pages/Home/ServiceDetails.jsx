@@ -1,21 +1,21 @@
 import React from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import MyReview from "../Review/MyReview";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
-  const { _id, name, img, price, description, rating } = service;
+  const { name, img, price, description, rating } = service;
 
   return (
     <div>
       {" "}
-      <div className="card card-side w-[80%] mx-auto shadow-xl mt-20 mb-20 py-4 hover:bg-blue-100 translate duration-500 ease-out  border-2 border-black">
+      <div className="card card-side w-[80%] mx-auto shadow-xl mt-20 mb-20 py-4 hover:bg-blue-100 translate duration-500 ease-out  border border-gray-300">
         <figure>
           <img
             className="w-96 h-full p-8 rounded-r-full hover:translate-x-2 duration-500 ease-out"
             src={img}
-            alt="Movie"
+            alt="exercise"
           />
         </figure>
         <div className="card-body w-3/5">
@@ -33,13 +33,7 @@ const ServiceDetails = () => {
             </div>
           </div>
           <p className="text-justify">{description}</p>
-          <div className="card-actions justify-end">
-            <Link to={`/review/${_id}`}>
-              <button className="border border-black px-4 mt-3 py-1.5 hover:translate duration-300 ease-in  hover:bg-red-600 hover:text-white">
-                Write a review
-              </button>
-            </Link>
-          </div>
+          
         </div>
       </div>
       <MyReview></MyReview>

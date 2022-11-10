@@ -5,6 +5,7 @@ import { AuthContext } from "../Contexts/AuthProvider";
 
 const SubmitReview = () => {
   const service = useLoaderData();
+  console.log(service);
   const { user } = useContext(AuthContext);
   const { _id, name, price, rating, img } = service;
 
@@ -12,8 +13,7 @@ const SubmitReview = () => {
     e.preventDefault();
     const form = e.target;
     const email = user?.email || form.email.value;
-    const userImg = form.photoURL.value || user?.photoURL;
-
+    const userImg = user?.photoURL || form.photoURL.value;
     const userName = user?.displayName || form.userName.value;
     const comment = form.comment.value;
     const date = form.date.value;
