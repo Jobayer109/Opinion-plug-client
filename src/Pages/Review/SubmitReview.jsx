@@ -95,12 +95,7 @@ const SubmitReview = () => {
               required
             />
             <input type="date" name="date" id="" className="border rounded-lg p-3" required />
-            <input
-              type="text"
-              name="photo"
-              className="border rounded-lg p-3"
-              placeholder="your photo"
-            />
+            
           </div>
           <div className="my-8">
             <textarea

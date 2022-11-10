@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Spinner from "../Shared/Spinner";
 import Reviews from "./Reviews";
 
 const PublicReviews = () => {
@@ -18,9 +19,11 @@ const PublicReviews = () => {
     <div>
       <p className="text-center">{reviews.length ? "" : "No reviews were added"}</p>
       <div className="grid grid-cols-3 w-[80%] mx-auto gap-10 mb-24">
-        {reviews?.map((review) => (
-          <Reviews key={review._id} review={review}></Reviews>
-        ))}
+        {reviews.length === 0 ? (
+          <Spinner />
+        ) : (
+          reviews?.map((review) => <Reviews key={review._id} review={review}></Reviews>)
+        )}
       </div>
       <div className="flex items-center justify-center">
         <div className="card-actions justify-center">
