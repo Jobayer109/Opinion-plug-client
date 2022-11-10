@@ -27,8 +27,6 @@ const MyReview = () => {
           swal("Ok", "Your review is deleted successfully", "success");
           const remaining = reviews.filter((rvw) => rvw._id !== _id);
           setReviews(remaining);
-        } else {
-          swal("ops", "No review", "warning");
         }
       });
   };
@@ -49,13 +47,13 @@ const MyReview = () => {
 
   return (
     <div>
+      <p className="text-center">{reviews.length ? "" : "No reviews were added"}</p>
       <div className="grid grid-cols-2 w-[80%] mx-auto gap-10 mb-24">
         {reviews?.map((review) => (
           <Reviews
             key={review._id}
             review={review}
             handleDeleteReview={handleDeleteReview}
-          
           ></Reviews>
         ))}
       </div>
@@ -76,7 +74,7 @@ const MyReview = () => {
             </div>
             <div className="modal-action">
               <label
-                onClick={()=> handleUpdateReview(serviceReviews._id)}
+                onClick={() => handleUpdateReview(serviceReviews._id)}
                 htmlFor="my-modal"
                 className="border border-black px-4 mt-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-sm"
               >

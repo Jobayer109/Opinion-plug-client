@@ -30,7 +30,7 @@ const Register = () => {
 
   return (
     <div>
-      <Spinner></Spinner>
+    1 pl-3 <Spinner></Spinner>
       <div className="flex items-center justify-evenly w-[80%] mx-auto my-24">
         <div className="w-1/2">
           <img
@@ -46,7 +46,7 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
-                className="w-full border p-3 rounded-lg"
+                className="w-full border p-1 pl-3 rounded-lg"
                 placeholder="Your name"
                 required
               />
@@ -55,7 +55,7 @@ const Register = () => {
               <input
                 type="text"
                 name="photoURL"
-                className="w-full border p-3 rounded-lg"
+                className="w-full border p-1 pl-3 rounded-lg"
                 placeholder="photo url"
                 required
               />
@@ -64,7 +64,7 @@ const Register = () => {
               <input
                 type="email"
                 name="email"
-                className="w-full border p-3 rounded-lg"
+                className="w-full border p-1 pl-3 rounded-lg"
                 placeholder="email address"
                 required
               />
@@ -73,14 +73,14 @@ const Register = () => {
               <input
                 type="password"
                 name="password"
-                className="w-full border p-3 rounded-lg"
+                className="w-full border p-1 pl-3 rounded-lg"
                 placeholder="password"
                 required
               />
             </div>
             <button
               type="submit"
-              className="w-full border px-4 py-3 rounded-md font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white"
+              className="w-full border px-4 py-2 rounded-md font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white"
             >
               Register
             </button>

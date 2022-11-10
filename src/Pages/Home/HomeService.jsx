@@ -8,7 +8,7 @@ const HomeService = ({service}) => {
       const { _id, name, img, price, description, rating } = service;
 
     return (
-      <div className="card card-compact w-80 shadow-xl mt-40 hover:translate duration-500 ease-in hover:bg-red-200">
+      <div className="card card-compact w-80 shadow-xl mt-12 hover:translate duration-500 ease-in hover:bg-red-200">
         <PhotoProvider>
           <PhotoView src={img}>
             <img className="h-44 w-[95%] mx-auto rounded-lg mt-2 " src={img} alt="" />

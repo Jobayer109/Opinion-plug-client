@@ -110,12 +110,14 @@ const Header = () => {
         )}
 
         {user?.email ? (
-          <button
-            onClick={handleSignOut}
-            className="border px-4 py-2 font-medium bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm"
-          >
-            Sign out
-          </button>
+          <Link to='/login'>
+            <button
+              onClick={handleSignOut}
+              className="border px-4 py-2 font-medium bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm"
+            >
+              Sign out
+            </button>
+          </Link>
         ) : (
           <Link to="/login">
             <button className="border px-4 py-2 font-medium bg-blue-800 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm">

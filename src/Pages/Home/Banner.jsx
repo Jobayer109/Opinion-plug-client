@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div>
       <div
-        className="hero h-96 mt-12 mb-60 relative border border-red-600"
+        className="hero h-96 mt-12 mb-96 relative border border-red-600"
         style={{
           backgroundImage: `url("https://cdn.muscleandstrength.com/sites/default/files/field/feature-wide-image/workout/allmaxcablefly1000.jpg")`,
         }}

@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { FaCalendarAlt, FaEdit, FaTrash } from "react-icons/fa";
 import { AuthContext } from "../Contexts/AuthProvider";
 
-const Reviews = ({ review, handleDeleteReview, handleUpdateReview }) => {
+const Reviews = ({ review, handleDeleteReview }) => {
   const { user } = useContext(AuthContext);
-  const { comment, userName, _id, date, serviceId } = review;
+  const { comment, userName, _id, date } = review;
   console.log(review);
 
   return (

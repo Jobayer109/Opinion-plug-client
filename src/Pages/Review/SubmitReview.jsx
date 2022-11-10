@@ -100,10 +100,6 @@ const SubmitReview = () => {
               name="photoURL"
               className="border rounded-lg p-3"
               placeholder="your photo"
-              defaultValue={user?.photoURL}
-              readOnly
-              required
-              hidden
             />
           </div>
           <div className="my-8">
@@ -123,7 +119,7 @@ const SubmitReview = () => {
               />
             </div>
             <div>
-              <Link to="/services">
+              <Link to={`/service/${_id}`}>
                 <button className="border border-black px-4 mt-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-sm">
                   Back
                 </button>

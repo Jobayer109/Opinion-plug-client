@@ -60,7 +60,7 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
-                className="w-full border p-3 rounded-lg"
+                className="w-full border p-1  pl-3 rounded-lg"
                 placeholder="email"
                 required
               />
@@ -70,12 +70,12 @@ const Login = () => {
                 for="password"
                 className="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Your password
+                Password
               </label>
               <input
                 type="password"
                 name="password"
-                className="w-full border p-3 rounded-lg"
+                className="w-full border p-1 pl-3  rounded-lg"
                 placeholder="password"
                 required
               />
@@ -91,7 +91,7 @@ const Login = () => {
 
             <button
               type="submit"
-              className="w-full border px-4 py-3 font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-md"
+              className="w-full border px-4 py-1 font-bold bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-md"
             >
               Sign in
             </button>
@@ -100,7 +100,7 @@ const Login = () => {
             <div className="text-center">
               <button
                 onClick={handleGoogleSignIn}
-                className="text-xl mr-3 py-1.5 rounded-lg hover:bg-blue-500 hover:text-white flex items-center border translate duration-300 ease-in border-black w-full"
+                className="text-xl mr-3 py-1 rounded-lg hover:bg-blue-500 hover:text-white flex items-center border translate duration-300 ease-in border-black w-full"
               >
                 <FaGoogle className="ml-14 mr-3" />
                 <p>Sign in with Google</p>
