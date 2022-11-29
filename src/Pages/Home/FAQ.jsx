@@ -13,7 +13,7 @@ const FAQ = () => {
             <summary className="px-4 font-mono py-6 text-lg  focus:outline-none focus-visible:ring-violet-400">
               When will I have access to the lectures and assignments?
             </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+            <p className="px-4 py-6 pt-0 ml-4 -mt-4">
               Access to lectures and assignments depends on your type of enrollment. If you take a
               course in audit mode, you will be able to see most course materials for free. To
               access graded assignments and to earn a Certificate, you will need to purchase the
@@ -28,7 +28,7 @@ const FAQ = () => {
             <summary className="px-4 font-mono py-6 text-lg  focus:outline-none focus-visible:ring-violet-400">
               What will I get if I purchase the Certificate?
             </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
               When you purchase a Certificate you get access to all course materials, including
               graded assignments. Upon completing the course, your electronic Certificate will be
               added to your Accomplishments page - from there, you can print your Certificate or add
@@ -40,7 +40,7 @@ const FAQ = () => {
             <summary className="px-4 font-mono py-6 text-lg  focus:outline-none focus-visible:ring-violet-400">
               Is financial aid available?
             </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
               Yes. In select learning programs, you can apply for financial aid or a scholarship if
               you can’t afford the enrollment fee. If fin aid or scholarship is available for your
               learning program selection, you’ll find a link to apply on the description page.
@@ -50,7 +50,7 @@ const FAQ = () => {
             <summary className="px-4 font-mono py-6 text-lg  focus:outline-none focus-visible:ring-violet-400">
               Do you offer a free trial ?
             </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
               No, we don't. However, we provide a demo with full functions. You can check out the
               functions freely. Create, manage items and shape the pages your way. Moreover, our
               free installation policy helps define whether Magezon Page Builder works well with
@@ -61,7 +61,7 @@ const FAQ = () => {
             <summary className="px-4 font-mono py-6 text-lg  focus:outline-none focus-visible:ring-violet-400">
               How can I pray for your services ?
             </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
+            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">
               Currently, we only support payment via Paypal if you purchase products on our website.
               However, we will consider other payment methods and notify you of this.
             </p>
