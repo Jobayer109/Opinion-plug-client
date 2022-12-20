@@ -20,7 +20,7 @@ const AddService = () => {
       rating,
     };
 
-    fetch("https://opinion-plug-server.vercel.app/service", {
+    fetch("http://localhost:5000/service", {
       method: "POST",
       headers: {
         "content-type": " application/json",
@@ -37,14 +37,16 @@ const AddService = () => {
   };
 
   return (
-    <section className="p-6 bg-blue-100  h-screen pt-20 ">
+    <section className="p-6 bg-blue-100 pt-20 ">
       <form
         onSubmit={handleAddService}
         className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid w-[80%]"
       >
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
           <div className="space-y-2 col-span-full lg:col-span-1">
-            <p className="font-medium text-2xl text-center font-mono mb-2 border  py-2 mt-5 bg-blue-200 text-blue-800 rounded-l-full shadow-xl">Add Service</p>
+            <p className="font-medium text-2xl text-center font-mono mb-2 border  py-2 mt-5 bg-blue-200 text-blue-800 rounded-l-full shadow-xl">
+              Add Service
+            </p>
             <img className="h-72" src={banner} alt="" />
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -72,8 +74,6 @@ const AddService = () => {
                 required
               />
             </div>
-
-            
 
             <div className="col-span-full">
               <label for="" className="text-sm">

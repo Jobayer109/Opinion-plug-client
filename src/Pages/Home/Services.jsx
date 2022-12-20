@@ -10,7 +10,7 @@ const Services = () => {
   const pages = Math.ceil(count / size);
 
   useEffect(() => {
-    fetch(`https://opinion-plug-server.vercel.app/services?page=${page}&size=${size}`)
+    fetch(`http://localhost:5000/services?page=${page}&size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         setServices(data.services);
@@ -25,7 +25,7 @@ const Services = () => {
           Services
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-10 w-[80%] mx-auto mb-20">
+      <div className="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full sm:w-[90%] md:w-[90%] lg:w-[90%] mx-36 md:mx-auto lg:mx-auto ">
         {services.length === 0 ? (
           <Spinner />
         ) : (

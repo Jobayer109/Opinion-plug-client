@@ -31,7 +31,7 @@ const SubmitReview = () => {
       userImg,
     };
 
-    fetch(`https://opinion-plug-server.vercel.app/reviews`, {
+    fetch(`http://localhost:5000/reviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -95,7 +95,6 @@ const SubmitReview = () => {
               required
             />
             <input type="date" name="date" id="" className="border rounded-lg p-3" required />
-            
           </div>
           <div className="my-8">
             <textarea

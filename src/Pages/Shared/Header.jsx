@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaSignOutAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logo.png";
 import { AuthContext } from "../Contexts/AuthProvider";
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
-    
+  const { user, logOut } = useContext(AuthContext);
 
   const handleSignOut = () => {
     logOut()
       .then((result) => {
-        localStorage.clear()
+        localStorage.clear();
       })
       .then((error) => {});
   };
@@ -30,7 +29,7 @@ const Header = () => {
             {user?.email ? (
               <>
                 <li>
-                  <Link 
+                  <Link
                     className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
                     to="/myReviews"
                   >
@@ -45,14 +44,7 @@ const Header = () => {
                     Add Service
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
-                    to="/profile"
-                  >
-                    Profile
-                  </Link>
-                </li>
+
                 <li>
                   <Link
                     className="  text-lg hover:bg-red-500 hover:text-white text-blue-800"
@@ -97,27 +89,32 @@ const Header = () => {
       </div>
       <div className="navbar-center">
         <Link to="/">
-          <img className="h-6" src={logo} alt="" />
+          <img className="h-6 object-contain" src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-end">
-        {user?.photoURL &&
-          <div className="avatar mr-4">
+        {user?.photoURL && (
+          <div className="avatar mr-4 hidden sm:block md:block lg:block">
             <div className="w-10 rounded-full">
               <img src={user?.photoURL} alt="" />
             </div>
           </div>
-        }
+        )}
 
         {user?.email ? (
-          <Link to='/login'>
-            <button
-              onClick={handleSignOut}
-              className="border px-4 py-2 font-medium bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm"
-            >
-              Sign out
-            </button>
-          </Link>
+          <>
+            <Link to="/login">
+              <button
+                onClick={handleSignOut}
+                className="border px-4 py-2 font-medium bg-red-600 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm hidden sm:block md:block lg:block"
+              >
+                Sign out
+              </button>
+            </Link>
+            <Link onClick={handleSignOut} to="/login">
+              <FaSignOutAlt className="sm:hidden md:hidden lg:hidden text-2xl text-red-500" />
+            </Link>
+          </>
         ) : (
           <Link to="/login">
             <button className="border px-4 py-2 font-medium bg-blue-800 hover:bg-white translate duration-300 ease-in hover:text-black hover:border-black text-white rounded-sm">

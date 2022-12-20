@@ -18,7 +18,7 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        logOut()
+        logOut();
         navigate("/login");
         profile(name, photoURL);
         form.reset();
@@ -31,7 +31,7 @@ const Register = () => {
 
   return (
     <div>
-    1 pl-3 <Spinner></Spinner>
+      <Spinner></Spinner>
       <div className="flex items-center justify-evenly w-[80%] mx-auto my-24">
         <div className="w-1/2">
           <img
