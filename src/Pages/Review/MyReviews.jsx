@@ -10,7 +10,7 @@ const MyReviews = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/review?email=${user?.email}`, {
+      fetch(`https://opinion-plug-server.vercel.app/review?email=${user?.email}`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
         },
@@ -28,7 +28,7 @@ const MyReviews = () => {
   }, [user?.email, logOut]);
 
   const handleDeleteReview = (_id) => {
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://opinion-plug-server.vercel.app/reviews/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -42,7 +42,7 @@ const MyReviews = () => {
   };
 
   const handleUpdateReview = (serviceId) => {
-    fetch(`http://localhost:5000/reviews/${serviceId}`, {
+    fetch(`https://opinion-plug-server.vercel.app/reviews/${serviceId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

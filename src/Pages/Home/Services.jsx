@@ -10,7 +10,7 @@ const Services = () => {
   const pages = Math.ceil(count / size);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services?page=${page}&size=${size}`)
+    fetch(`https://opinion-plug-server.vercel.app/services?page=${page}&size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         setServices(data.services);
