@@ -8,7 +8,7 @@ const PublicReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`https://opinion-plug-server.vercel.app/reviews?serviceId=${serviceReviews._id}`)
+    fetch(`http://localhost:5000/reviews?serviceId=${serviceReviews._id}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import HomeService from "./HomeService";
+import HomeService from "../Home/Service";
+import ReviewModal from "./ReviewModal";
 
 const HomeServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("https://opinion-plug-server.vercel.app/homeServices")
+    fetch("http://localhost:5000/homeServices")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
@@ -14,7 +15,9 @@ const HomeServices = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-center text-3xl font-bold  text-red-600 border-b-2 pb-3">Services</h2>
+      <h2 className="text-center text-3xl font-bold  text-red-600 border-b-2 pb-3 mt-6">
+        Services
+      </h2>
       <div>
         <div className="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full sm:w-[90%] md:w-[90%] lg:w-[90%] mx-36 md:mx-auto lg:mx-auto ">
           {services.map((service) => (
@@ -29,6 +32,7 @@ const HomeServices = () => {
           </Link>
         </div>
       </div>
+      <ReviewModal></ReviewModal>
     </div>
   );
 };

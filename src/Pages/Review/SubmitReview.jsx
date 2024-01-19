@@ -31,7 +31,7 @@ const SubmitReview = () => {
       userImg,
     };
 
-    fetch(`https://opinion-plug-server.vercel.app/reviews`, {
+    fetch(`http://localhost:5000/reviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

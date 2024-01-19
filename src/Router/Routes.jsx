@@ -34,8 +34,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "service/:id",
-        loader: ({ params }) =>
-          fetch(`https://opinion-plug-server.vercel.app/services/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
         element: <ServiceDetails></ServiceDetails>,
       },
       {
@@ -48,8 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "review/:id",
-        loader: ({ params }) =>
-          fetch(`https://opinion-plug-server.vercel.app/services/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
         element: (
           <PrivetRoutes>
             <SubmitReview></SubmitReview>
@@ -59,8 +57,7 @@ export const router = createBrowserRouter([
       {
         path: "publicREview/:serviceId",
         element: <PublicReviews></PublicReviews>,
-        loader: (params) =>
-          fetch(`https://opinion-plug-server.vercel.app/reviews?serviceId=${params.serviceId}`),
+        loader: (params) => fetch(`http://localhost:5000/reviews?serviceId=${params.serviceId}`),
       },
       {
         path: "myReviews",

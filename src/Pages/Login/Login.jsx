@@ -27,7 +27,7 @@ const Login = () => {
           email: result.user?.email,
         };
 
-        fetch(`https://opinion-plug-server.vercel.app/jwt`, {
+        fetch(`http://localhost:5000/jwt`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -52,7 +52,7 @@ const Login = () => {
           email: result.user?.email,
         };
 
-        fetch(`https://opinion-plug-server.vercel.app/jwt`, {
+        fetch(`http://localhost:5000/jwt`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
